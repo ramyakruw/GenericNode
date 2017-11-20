@@ -20,6 +20,7 @@ public class UDPClient implements Client {
 	@Override
 	public List<String> sendMessage(String message) throws IOException {
 		socket = new DatagramSocket();
+		System.out.println("Client starting a connection on port: " + socket.getLocalPort());
 
 		DatagramPacket sendPacket = new DatagramPacket(message.getBytes(), message.getBytes().length,
 				InetAddress.getByName(server), port);

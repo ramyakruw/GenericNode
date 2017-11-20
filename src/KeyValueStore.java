@@ -1,10 +1,10 @@
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class KeyValueStore {
-	HashMap<String, String> map;
+	ConcurrentHashMap<String, String> map;
 
 	public KeyValueStore() {
-		map = new HashMap<String, String>();
+		map = new ConcurrentHashMap<String, String>();
 	}
 
 	public void put(String key, String value) {
@@ -19,7 +19,7 @@ public class KeyValueStore {
 		map.remove(key);
 	}
 
-	public HashMap<String, String> store() {
+	public ConcurrentHashMap<String, String> store() {
 		return map;
 	}
 
